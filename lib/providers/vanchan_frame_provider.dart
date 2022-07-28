@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class NiyamSubmissionProvider extends ChangeNotifier{
+class MukhpathVanchanSubmissionProvider extends ChangeNotifier{
   var gradiantColorList=[
     [Color(0xffE86026),Color(0xffFFCAAC)],
     [Color(0xff4953AE),Color(0xff7482FF).withOpacity(0.74)],

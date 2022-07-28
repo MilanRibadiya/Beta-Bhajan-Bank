@@ -1,4 +1,4 @@
-import 'package:bhajan_bank/providers/niyam_submission_provider.dart';
+import 'package:bhajan_bank/providers/mukhpath_vanchan_submission_provider.dart';
 import 'package:bhajan_bank/providers/size_provider.dart';
 import 'package:bhajan_bank/widgets/after_home_appbar.dart';
 import 'package:bhajan_bank/widgets/functionality_btn.dart';
@@ -52,15 +52,16 @@ class NiyamSubmission extends StatelessWidget {
                                     decoration: BoxDecoration(
                                         gradient: LinearGradient(
                                       colors: [
-                                        // Color(0xffE86026),
-                                        // Color(0xffFFCAAC),
                                         context.watch<NiyamSubmissionProvider>().gradiantColorList[position][0],
-                                        context.watch<NiyamSubmissionProvider>().gradiantColorList[position][1]
+                                        context.watch<NiyamSubmissionProvider>().gradiantColorList[position][1],
                                       ],
                                       begin: Alignment.centerLeft,
                                       end: Alignment.centerRight,
                                     ),
-                                    borderRadius:BorderRadius.circular(20)
+                                    borderRadius:BorderRadius.circular(20),
+                                      boxShadow: [
+                                        BoxShadow(color: Colors.grey.shade400,offset: Offset(2,2),blurRadius: 10),
+                                      ]
                                     ),
                                     child: Stack(
                                       children: [
@@ -82,10 +83,12 @@ class NiyamSubmission extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              FunctionalityButton(),
-                              FunctionalityButton()
+                              FunctionalityButton(0xffA96D1B,"assets/svg/ic_niyam_submit.svg"),
+                              FunctionalityButton(0xffA96D1B,"assets/svg/ic_mala.svg",name: "Mala",)
                             ],
-                          )
+                          ),
+                          Container(width: double.infinity,color: Color(0xffC4945B),height: 0.5,),
+                          Text("TODAY’S VACHANAMRUT :",style: TextStyle(color: Color(0xffA96D1B),fontSize: 20,fontWeight: FontWeight.bold,),),
                         ],
                       ),
                     ),
